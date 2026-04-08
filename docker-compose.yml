@@ -4,7 +4,7 @@ services:
     container_name: gpoi-project
     restart: unless-stopped
     expose:
-      - "6000"
+      - "80"
     networks:
       - reverse-proxy
 
