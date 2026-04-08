@@ -1,0 +1,13 @@
+services:
+  gpoi-project:
+    build: .
+    container_name: gpoi-project
+    restart: unless-stopped
+    expose:
+      - "80"
+    networks:
+      - reverse-proxy
+
+networks:
+  reverse-proxy:
+    external: true
