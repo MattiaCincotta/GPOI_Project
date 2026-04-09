@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DDL Supermercati | Supply Chain Map</title>
+    <script>
+        // Protezione pagina: redirect al login se non autenticato
+        if (sessionStorage.getItem('ddl_auth') !== 'true') {
+            window.location.replace('login.html');
+        }
+    </script>
     <link rel="stylesheet" href="style.css">
     <style>
         /* Integrazioni CSS per la mappa interattiva */
@@ -707,6 +713,17 @@
                             sicurezza logistica, attivate verifiche standard sulle spedizioni in ingresso alle banchine
                             in attesa di ulteriori riscontri.</li>
                     </ul>
+                    <div class="doc-gallery">
+                        <h5>📎 Documenti Allegati</h5>
+                        <div class="doc-gallery-items">
+                            <div class="doc-item">
+                                <a href="assets/docs/ddl_gratis.jpeg" target="_blank">
+                                    <img src="assets/docs/ddl_gratis.jpeg" alt="DDL GRATIS">
+                                </a>
+                                <span>DDL GRATIS</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

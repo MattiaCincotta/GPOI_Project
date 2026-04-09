@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDL Supermercati | Login Supply Chain</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .login-wrapper {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: #f4f7f6;
+        }
+
+        .login-card {
+            background: #fff;
+            padding: 40px 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-card h2 {
+            margin: 0 0 8px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .login-card p.subtitle {
+            margin: 0 0 25px;
+            color: #7f8c8d;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .login-card label {
+            display: block;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 6px;
+            font-size: 0.9em;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #dcdfe1;
+            border-radius: 8px;
+            font-size: 1em;
+            margin-bottom: 18px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .login-card input:focus {
+            outline: none;
+            border-color: #27ae60;
+        }
+
+        .login-card button {
+            width: 100%;
+            padding: 13px;
+            background: #27ae60;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .login-card button:hover {
+            background: #219150;
+        }
+
+        .error-msg {
+            background: #fdecea;
+            color: #c0392b;
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin-bottom: 18px;
+            font-size: 0.9em;
+            text-align: center;
+            display: none;
+        }
+
+        .error-msg.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="assets/logo.png" alt="Logo DDL Supermercati" class="logo-image">
+            <div class="logo-text">
+                <span class="brand-name">DDL SUPERMERCATI</span>
+                <span class="brand-slogan">QUALITÀ E RISPARMIO DI CASA</span>
+            </div>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="prodotti.html">Spesa Online</a>
+            <a href="bacheca.html">Chi Siamo</a>
+            <a href="supply-chain.html" class="active">Supply Chain</a>
+        </nav>
+    </header>
+
+    <main class="login-wrapper">
+        <div class="login-card">
+            <h2>Accesso Riservato</h2>
+            <p class="subtitle">Inserisci le credenziali per accedere alla Supply Chain</p>
+
+            <div id="errorMsg" class="error-msg">Credenziali non valide. Riprova.</div>
+
+            <form id="loginForm" autocomplete="off">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Accedi</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 DDL Supermercati S.p.A. - Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        // Credenziali "finte" lato client (il sito e' statico)
+        const VALID_USERNAME = "admin";
+        const VALID_PASSWORD = "ddl2026";
+
+        const form = document.getElementById('loginForm');
+        const errorMsg = document.getElementById('errorMsg');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const u = document.getElementById('username').value.trim();
+            const p = document.getElementById('password').value;
+
+            if (u === VALID_USERNAME && p === VALID_PASSWORD) {
+                sessionStorage.setItem('ddl_auth', 'true');
+                window.location.href = 'supply-chain.html';
+            } else {
+                errorMsg.classList.add('show');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
