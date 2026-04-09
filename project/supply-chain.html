@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +46,7 @@
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .filter-btn.active {
@@ -67,7 +68,7 @@
             gap: 20px;
             padding: 20px 20px 60px 20px;
             scroll-snap-type: x mandatory;
-            
+
             /* Hide scrollbar for IE, Edge and Firefox */
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -116,22 +117,44 @@
             display: none;
         }
 
-        .sc-map.timeline-view .node-supplier { border-top-color: var(--supplier); }
-        .sc-map.timeline-view .node-logistics { border-top-color: var(--logistics); }
-        .sc-map.timeline-view .node-customer { border-top-color: var(--customer); }
-        .sc-map.timeline-view .node-security { border-top-color: var(--security); }
+        .sc-map.timeline-view .node-supplier {
+            border-top-color: var(--supplier);
+        }
 
-        .sc-map.timeline-view .node-supplier::before { border-color: var(--supplier); }
-        .sc-map.timeline-view .node-logistics::before { border-color: var(--logistics); }
-        .sc-map.timeline-view .node-customer::before { border-color: var(--customer); }
-        .sc-map.timeline-view .node-security::before { border-color: var(--security); }
+        .sc-map.timeline-view .node-logistics {
+            border-top-color: var(--logistics);
+        }
+
+        .sc-map.timeline-view .node-customer {
+            border-top-color: var(--customer);
+        }
+
+        .sc-map.timeline-view .node-security {
+            border-top-color: var(--security);
+        }
+
+        .sc-map.timeline-view .node-supplier::before {
+            border-color: var(--supplier);
+        }
+
+        .sc-map.timeline-view .node-logistics::before {
+            border-color: var(--logistics);
+        }
+
+        .sc-map.timeline-view .node-customer::before {
+            border-color: var(--customer);
+        }
+
+        .sc-map.timeline-view .node-security::before {
+            border-color: var(--security);
+        }
 
         .sc-node {
             background: white;
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             border-left: 8px solid #ccc;
             transition: transform 0.3s ease, opacity 0.3s ease;
             cursor: pointer;
@@ -143,10 +166,21 @@
         }
 
         /* Colori per Categoria */
-        .node-supplier { border-left-color: var(--supplier); }
-        .node-logistics { border-left-color: var(--logistics); }
-        .node-customer { border-left-color: var(--customer); }
-        .node-security { border-left-color: var(--security); }
+        .node-supplier {
+            border-left-color: var(--supplier);
+        }
+
+        .node-logistics {
+            border-left-color: var(--logistics);
+        }
+
+        .node-customer {
+            border-left-color: var(--customer);
+        }
+
+        .node-security {
+            border-left-color: var(--security);
+        }
 
         .node-header {
             display: flex;
@@ -163,10 +197,21 @@
             color: white;
         }
 
-        .tag-supplier { background: var(--supplier); }
-        .tag-logistics { background: var(--logistics); }
-        .tag-customer { background: var(--customer); }
-        .tag-security { background: var(--security); }
+        .tag-supplier {
+            background: var(--supplier);
+        }
+
+        .tag-logistics {
+            background: var(--logistics);
+        }
+
+        .tag-customer {
+            background: var(--customer);
+        }
+
+        .tag-security {
+            background: var(--security);
+        }
 
         .email-content {
             display: none;
@@ -194,7 +239,7 @@
             margin-bottom: 15px;
             text-align: justify;
             line-height: 1.5;
-            color: #444;    
+            color: #444;
         }
 
         .email-content.narrative-log ul {
@@ -284,13 +329,21 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
-        .hidden { display: none; }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -324,7 +377,7 @@
         </div>
 
         <div class="sc-map timeline-view" id="scMap">
-            
+
             <div class="sc-node node-supplier" data-cat="supplier" onclick="toggleEmail(this)">
                 <div class="node-header">
                     <span class="category-tag tag-supplier">Fornitore</span>
@@ -335,13 +388,30 @@
                 <div class="email-content narrative-log">
                     <h4>Cronistoria Rapporti Commerciali:</h4>
                     <p class="narrative-description">
-                        La fornitura inizia il 7 aprile 2026, quando DDL Supermercati invia un ordine a Fât Ben Trasformazioni Agroalimentari per il riassortimento dei reparti cantina e dispense. Nello specifico vengono richiesti 204 litri di vino (tra cui Sangiovese DOC e Spumante Moscato Dolce) e 340 Kg tra conserve (Passata di Pomodoro, Olio) e latticini (Squacquerone 20kg, Ricotta 15kg, Grana 20kg). Fât Ben fornisce un preventivo finale e DDL conferma l'ordine apprezzando il 10% di sconto sul volume, scegliendo di provvedere con bonifico anticipato. In risposta alla richiesta dei dati fiscali, DDL trasmette tutto tempestivamente. L'8 aprile Fât Ben emette la Fattura Elettronica di cortesia n. 25 a saldo di € 5.637,14. Nello stesso giorno, DDL effettua il bonifico SEPA presso Intesa Sanpaolo e trasmette la ricevuta. Fât Ben conclude l'iter preparando il carico provvisto di DDT n. 1 (datato 07/04/2026).
+                        La fornitura inizia il 7 aprile 2026, quando DDL Supermercati invia un ordine a Fât Ben
+                        Trasformazioni Agroalimentari per il riassortimento dei reparti cantina e dispense. Nello
+                        specifico vengono richiesti 204 litri di vino (tra cui Sangiovese DOC e Spumante Moscato Dolce)
+                        e 340 Kg tra conserve (Passata di Pomodoro, Olio) e latticini (Squacquerone 20kg, Ricotta 15kg,
+                        Grana 20kg). Fât Ben fornisce un preventivo finale e DDL conferma l'ordine apprezzando il 10% di
+                        sconto sul volume, scegliendo di provvedere con bonifico anticipato. In risposta alla richiesta
+                        dei dati fiscali, DDL trasmette tutto tempestivamente. L'8 aprile Fât Ben emette la Fattura
+                        Elettronica di cortesia n. 25 a saldo di € 5.637,14. Nello stesso giorno, DDL effettua il
+                        bonifico SEPA presso Intesa Sanpaolo e trasmette la ricevuta. Fât Ben conclude l'iter preparando
+                        il carico provvisto di DDT n. 1 (datato 07/04/2026).
                     </p>
                     <ul>
-                        <li><strong>07 Apr 2026:</strong> Invio ordine per 204 L di vino e superalcolici assortiti (Sangiovese, Spumante, Bianco, Rosso) e 340 Kg di dispense e latticini (Passate, Conserve, Salame, Squacquerone, Ricotta, Grana).</li>
-                        <li><strong>07 Apr 2026:</strong> Fât Ben preventiva il totale con uno sconto quantità del 10%. DDL risponde confermando e richiede le coordinate per un Bonifico Anticipato. DDL annuncia l'arrivo del vettore ConsegneSharp e fornisce i dati per la fatturazione elettronica.</li>
-                        <li><strong>08 Apr 2026:</strong> Fât Ben invia la Fattura Elettronica di cortesia n. 25 per l'importo di 5.637,14€. DDL salda tempestivamente tramite bonifico SEPA da Intesa Sanpaolo e trasmette la ricevuta contabile.</li>
-                        <li><strong>08 Apr 2026:</strong> Fât Ben prepara il carico con il DDT n. 1 del 07/04 a copertura dei beni ed annuncia al fornitore e al vettore la predisposizione dei pallet.</li>
+                        <li><strong>07 Apr 2026:</strong> Invio ordine per 204 L di vino e superalcolici assortiti
+                            (Sangiovese, Spumante, Bianco, Rosso) e 340 Kg di dispense e latticini (Passate, Conserve,
+                            Salame, Squacquerone, Ricotta, Grana).</li>
+                        <li><strong>07 Apr 2026:</strong> Fât Ben preventiva il totale con uno sconto quantità del 10%.
+                            DDL risponde confermando e richiede le coordinate per un Bonifico Anticipato. DDL annuncia
+                            l'arrivo del vettore ConsegneSharp e fornisce i dati per la fatturazione elettronica.</li>
+                        <li><strong>08 Apr 2026:</strong> Fât Ben invia la Fattura Elettronica di cortesia n. 25 per
+                            l'importo di 5.637,14€. DDL salda tempestivamente tramite bonifico SEPA da Intesa Sanpaolo e
+                            trasmette la ricevuta contabile.</li>
+                        <li><strong>08 Apr 2026:</strong> Fât Ben prepara il carico con il DDT n. 1 del 07/04 a
+                            copertura dei beni ed annuncia al fornitore e al vettore la predisposizione dei pallet. DDL
+                            conferma la corretta ricezione del DDT n. 1.</li>
                     </ul>
                     <div class="doc-gallery">
                         <h5>📎 Documenti Allegati</h5>
@@ -353,7 +423,8 @@
                                 <span>Bonifico Bancario</span>
                             </div>
                             <div class="doc-item">
-                                <a href="assets/docs/Industria di Trasformazione - Fattura Immediata DDL-2.pdf" target="_blank">
+                                <a href="assets/docs/Industria di Trasformazione - Fattura Immediata DDL-2.pdf"
+                                    target="_blank">
                                     <div class="doc-item-pdf">📄</div>
                                 </a>
                                 <span>Fattura Elettronica n.25</span>
@@ -379,22 +450,39 @@
                 <div class="email-content narrative-log">
                     <h4>Cronistoria Logistica:</h4>
                     <p class="narrative-description">
-                        Il 7 aprile 2026, contestualmente all'accordo con il fornitore, DDL contatta ConsegneSharp Srl per prenotare un trasporto di 550kg in partenza da Via Fossalta (Cesena) verso il polo di Piacenza. DDL richiede espressamente un mezzo refrigerato per garantire la catena del freddo ai formaggi. Sharp formula un preventivo di € 521,67 offrendo uno sconto del 5% in caso di pagamento al ritiro merci. DDL accetta la promozione, chiudendo l'importo totale a € 495,59 netti e fornendo tutti i dati di ritiro. Sharp comunica l'assegnazione dell'incarico alla conducente Carmen Monfry a bordo del Furgone Compatto (Targa: FG 145 GT). L'8 aprile, completato il prelievo, Sharp conferisce la copia della fattura emessa applicando il DDT n.1 del fornitore alla tratta.
+                        Il 7 aprile 2026, contestualmente all'accordo con il fornitore, DDL contatta ConsegneSharp Srl
+                        per prenotare un trasporto di 550kg in partenza da Via Fossalta (Cesena) verso il polo di
+                        Piacenza. DDL richiede espressamente un mezzo refrigerato per garantire la catena del freddo ai
+                        formaggi. Sharp formula un preventivo di € 521,67 offrendo uno sconto del 5% in caso di
+                        pagamento al ritiro merci. DDL accetta la promozione, chiudendo l'importo totale a € 495,59
+                        netti e fornendo tutti i dati di ritiro. Sharp comunica l'assegnazione dell'incarico alla
+                        conducente Carmen Monfry a bordo del Furgone Compatto (Targa: FG 145 GT). L'8 aprile, completato
+                        il prelievo, Sharp conferisce la copia della fattura emessa applicando il DDT n.1 del fornitore
+                        alla tratta.
                     </p>
                     <ul>
-                        <li><strong>07 Apr 2026:</strong> DDL contatta Sharp per la tratta fresca da Via Fossalta (Cesena) a Piacenza, per un carico misto stimato di 550kg. Assoluta urgenza su furgone refrigerato a motivo della presenza di formaggi come Squacquerone e Ricotta.</li>
-                        <li><strong>07 Apr 2026:</strong> Sharp formula il preventivo a € 521,67. Nelle mail successive, Sharp propone ed applica ufficialmente un 5% di sconto a fronte di saldo contanti al ritiro. Nuova tariffa: 495,59€.</li>
-                        <li><strong>07 Apr 2026:</strong> DDL accetta lo sconto. Sharp dirama i riferimenti per il carico: conducente Carmen Monfry a bordo del Furgone Compatto (Targa: FG 145 GT).</li>
-                        <li><strong>08 Apr 2026:</strong> Sharp fornisce copia della fattura emessa post ritiro applicando il DDT n.1 del fornitore, confermando la presa in carico e il viaggio verso Piacenza.</li>
+                        <li><strong>07 Apr 2026:</strong> DDL contatta Sharp per la tratta fresca da Via Fossalta
+                            (Cesena) a Piacenza, per un carico misto stimato di 550kg. Assoluta urgenza su furgone
+                            refrigerato a motivo della presenza di formaggi come Squacquerone e Ricotta.</li>
+                        <li><strong>07 Apr 2026:</strong> Sharp formula il preventivo a € 521,67. Nelle mail successive,
+                            Sharp propone ed applica ufficialmente un 5% di sconto a fronte di saldo contanti al ritiro.
+                            Nuova tariffa: 495,59€.</li>
+                        <li><strong>07 Apr 2026:</strong> DDL accetta lo sconto. Sharp dirama i riferimenti per il
+                            carico: conducente Carmen Monfry a bordo del Furgone Compatto (Targa: FG 145 GT).</li>
+                        <li><strong>08 Apr 2026:</strong> Sharp fornisce copia della fattura emessa post ritiro
+                            applicando il DDT n.1 del fornitore, confermando la presa in carico e il viaggio verso
+                            Piacenza.</li>
+                        <li><strong>08 Apr 2026:</strong> DDL riceve la fattura e dispone un bonifico SEPA di € 495,59 a
+                            favore di Sharp, trasmettendo a Sharp la ricevuta bancaria.</li>
                     </ul>
                     <div class="doc-gallery">
                         <h5>📎 Documenti Allegati</h5>
                         <div class="doc-gallery-items">
                             <div class="doc-item">
-                                <a href="assets/docs/BonificoConsegneSharp.png" target="_blank">
-                                    <img src="assets/docs/BonificoConsegneSharp.png" alt="Bonifico ConsegneSharp">
+                                <a href="assets/docs/FatturaFBSharp.png" target="_blank">
+                                    <img src="assets/docs/FatturaFBSharp.png" alt="Fattura ConsegneSharp">
                                 </a>
-                                <span>Bonifico Saldo Trasporto</span>
+                                <span>Fattura Sharp</span>
                             </div>
                         </div>
                     </div>
@@ -411,13 +499,30 @@
                 <div class="email-content narrative-log">
                     <h4>Cronistoria Rapporti Commerciali:</h4>
                     <p class="narrative-description">
-                        La relazione commerciale decolla il 7 aprile 2026 con un consistente ordine di approvvigionamento di ortofrutta e ittico: centinaia di chili di vegetali e numerosi prodotti ittici come Cozze. Giardino Delle Cozze risponde con una quotazione netta di € 709,25. Seppur l'ammontare rimanga inferiore alla soglia imposta per acquisire forti scontistiche, DDL accetta l'ordine proponendo un bonifico anticipato. Il CEO Anthony The Pink e il commerciale Peter Roundabout forniscono l'IBAN della Banca Popolare di Puglia e Basilicata rimarcando future partnership agevolate al crescere dei volumi. DDL invia la copia della contabile attestante l'avvenuto pagamento. Giardino Delle Cozze chiude la dinamica commerciale trasmettendo la Fattura Immediata n. 515.
+                        La relazione commerciale decolla il 7 aprile 2026 con un consistente ordine di
+                        approvvigionamento di ortofrutta e ittico: centinaia di chili di vegetali e numerosi prodotti
+                        ittici come Cozze. Giardino Delle Cozze risponde con una quotazione netta di € 709,25. Seppur
+                        l'ammontare rimanga inferiore alla soglia imposta per acquisire forti scontistiche, DDL accetta
+                        l'ordine proponendo un bonifico anticipato. Il CEO Anthony The Pink e il commerciale Peter
+                        Roundabout forniscono l'IBAN della Banca Popolare di Puglia e Basilicata rimarcando future
+                        partnership agevolate al crescere dei volumi. DDL invia la copia della contabile attestante
+                        l'avvenuto pagamento. Giardino Delle Cozze chiude la dinamica commerciale trasmettendo la
+                        Fattura Immediata n. 515.
                     </p>
                     <ul>
-                        <li><strong>07 Apr 2026:</strong> DDL innesca la conversazione inviando un imponente ordine per Patate, Carote, Fragole e Cozze vive, confermato formalmente da Giardino Delle Cozze a € 709,25 nette.</li>
-                        <li><strong>07 Apr 2026:</strong> Il commerciale dell'azienda e il CEO Anthony The Pink precisano la mancata applicazione dello sconto volume ma si impegnano a partnership in futuro. Viene diramato IBAN di Banca Pop. di Puglia per saldare i conti.</li>
-                        <li><strong>07 Apr 2026:</strong> Immediata reazione DDL: Dati fiscali e copia CRO/Contabile del bonifico inviati per attestare il pagamento.</li>
-                        <li><strong>07 Apr 2026:</strong> Giardino Delle Cozze emette e inoltra Fattura Immediata n. 515. Raccomanda massima accortezza del vettore sul mantenimento della catena del freddo per via della carica ittica infetta presente (Cozze).</li>
+                        <li><strong>07 Apr 2026:</strong> DDL innesca la conversazione inviando un imponente ordine per
+                            Patate, Carote, Fragole e Cozze vive, confermato formalmente da Giardino Delle Cozze a €
+                            709,25 nette.</li>
+                        <li><strong>07 Apr 2026:</strong> Il commerciale dell'azienda e il CEO Anthony The Pink
+                            precisano la mancata applicazione dello sconto volume ma si impegnano a partnership in
+                            futuro. Viene diramato IBAN di Banca Pop. di Puglia per saldare i conti.</li>
+                        <li><strong>07 Apr 2026:</strong> Immediata reazione DDL: Dati fiscali e copia CRO/Contabile del
+                            bonifico inviati per attestare il pagamento.</li>
+                        <li><strong>07 Apr 2026:</strong> Giardino Delle Cozze emette e inoltra Fattura Immediata n.
+                            515. Raccomanda massima accortezza del vettore sul mantenimento della catena del freddo per
+                            via della carica ittica infetta presente (Cozze).</li>
+                        <li><strong>08 Apr 2026:</strong> L'Ufficio Spedizioni di Giardino Delle Cozze invia in allegato
+                            il DDT definitivo per le spedizioni verso Piacenza.</li>
                     </ul>
                     <div class="doc-gallery">
                         <h5>📎 Documenti Allegati</h5>
@@ -427,6 +532,18 @@
                                     <img src="assets/docs/BonificoGDC.png" alt="Bonifico Giardino Delle Cozze">
                                 </a>
                                 <span>Bonifico Bancario</span>
+                            </div>
+                            <div class="doc-item">
+                                <a href="assets/docs/Vendita DDL Supermercati - Fattura Immediata.pdf" target="_blank">
+                                    <div class="doc-item-pdf">📋</div>
+                                </a>
+                                <span>Fattura Immediata</span>
+                            </div>
+                            <div class="doc-item">
+                                <a href="assets/docs/Vendita DDL Supermercati - Documenti - DDT.pdf" target="_blank">
+                                    <div class="doc-item-pdf">📋</div>
+                                </a>
+                                <span>DDT</span>
                             </div>
                         </div>
                     </div>
@@ -443,12 +560,27 @@
                 <div class="email-content narrative-log">
                     <h4>Cronistoria Logistica:</h4>
                     <p class="narrative-description">
-                        Per gestire la fornitura partita dalla Puglia, il 7 aprile 2026 DDL sottomette un'ulteriore richiesta di disponibilità verso la segreteria logistica di ConsegneSharp. Viene specificato un carico stimato in 550kg, ribadendo perentoriamente la necessità di una vera e propria cella frigorifera per contrastare il deperimento dei prodotti. Il vettore quantifica prima il tutto a € 2.466,33 introducendo di nuovo il meccanismo del 5% di sconto a vista. Il prezzo scontato di bilanciamento si attesta a € 2.343,01, ratificato quasi istantaneamente da DDL. Sharp designa definitivamente la gestione al proprio mezzo targato HC482YV e nomina alla conduzione del carico la trasportatrice Maria Addolorata (+39 3519239102).
+                        Per gestire la fornitura partita dalla Puglia, il 7 aprile 2026 DDL sottomette un'ulteriore
+                        richiesta di disponibilità verso la segreteria logistica di ConsegneSharp. Viene specificato un
+                        carico stimato in 550kg, ribadendo perentoriamente la necessità di una vera e propria cella
+                        frigorifera per contrastare il deperimento dei prodotti. Il vettore quantifica prima il tutto a
+                        € 2.466,33 introducendo di nuovo il meccanismo del 5% di sconto a vista. Il prezzo scontato di
+                        bilanciamento si attesta a € 2.343,01, ratificato quasi istantaneamente da DDL. Sharp designa
+                        definitivamente la gestione al proprio mezzo targato HC482YV e nomina alla conduzione del carico
+                        la trasportatrice Maria Addolorata (+39 3519239102).
                     </p>
                     <ul>
-                        <li><strong>07 Apr 2026:</strong> DDL stacca la richiesta di spedizione pesante verso Sharp: Foggia (Sud Italia) per Piacenza con obbligo cabina refrigerata ed assetto deperibile.</li>
-                        <li><strong>07 Apr 2026:</strong> Primo preventivo elaborato ad € 2.466,33. Nuovamente discusso in 3 veloci email lo status del pagamento a vista e confermato 5% di sconto finale a quota € 2.343,01.</li>
-                        <li><strong>07 Apr 2026:</strong> DDL accetta i termini inviando referenti di carico (Miroslav e Peter). Sharp chiude la discussione registrando formale vettura pesante (Targa: HC482YV) operata dalla fidatissima Maria Addolorata (+39 3519239102).</li>
+                        <li><strong>07 Apr 2026:</strong> DDL stacca la richiesta di spedizione pesante verso Sharp:
+                            Foggia (Sud Italia) per Piacenza con obbligo cabina refrigerata ed assetto deperibile.</li>
+                        <li><strong>07 Apr 2026:</strong> Primo preventivo elaborato ad € 2.466,33. Nuovamente discusso
+                            in 3 veloci email lo status del pagamento a vista e confermato 5% di sconto finale a quota €
+                            2.343,01.</li>
+                        <li><strong>07 Apr 2026:</strong> DDL accetta i termini inviando referenti di carico (Miroslav e
+                            Peter). Sharp chiude la discussione registrando formale vettura pesante (Targa: HC482YV)
+                            operata dalla fidatissima Maria Addolorata (+39 3519239102).</li>
+                        <li><strong>08 Apr 2026:</strong> DDL trasmette a Sharp il DDT emesso da Il Giardino delle Cozze
+                            per la conducente. Sharp invia la sua fattura e DDL esegue il saldo di € 2.343,01 inviando
+                            la contabile.</li>
                     </ul>
                     <div class="doc-gallery">
                         <h5>📎 Documenti Allegati</h5>
@@ -474,30 +606,90 @@
                 <div class="email-content narrative-log">
                     <h4>Cronistoria Rapporti Commerciali (B2B):</h4>
                     <p class="narrative-description">
-                        Il 7 aprile 2026, la trattativa con Matteo Angiolillo (Ristorante Patacca Burdel) si apre con una laconica richiesta di listino merci B2B. DDL risponde allegando tutte e 34 le referenze prezzate, imponendo regole stringenti: merce venduta puramente in formula Ex-Works limitatamente ritirabile al Polo Logistico di Piacenza, vietando ogni genere di scarico a domicilio. Patacca Burdel conferma il disinteresse logistico ed ordina ingenti quote merce (fra cui 100 bottiglie di Sangiovese e 67kg di Salame Romagnolo). DDL redige il bilancio analitico dell'ordine che matura in € 5.399,20 d'imponibile per chiudersi ad un gravato di € 6.213,68 IVA compresa. Il cliente provvede tempestivamente all'accredito sull'IBAN di Intesa Sanpaolo ed attende le documentazioni fiscali conferendo l'incarico di scarico ad un trasportatore terzo.
+                        Il 7 aprile 2026, la trattativa con Matteo Angiolillo (Ristorante Patacca Burdel) si apre con
+                        una laconica richiesta di listino merci B2B. DDL risponde allegando tutte e 34 le referenze
+                        prezzate, imponendo regole stringenti: merce venduta puramente in formula Ex-Works limitatamente
+                        ritirabile al Polo Logistico di Piacenza, vietando ogni genere di scarico a domicilio. Patacca
+                        Burdel conferma il disinteresse logistico ed ordina ingenti quote merce (fra cui 100 bottiglie
+                        di Sangiovese e 67kg di Salame Romagnolo). DDL redige il bilancio analitico dell'ordine che
+                        matura in € 5.399,20 d'imponibile per chiudersi ad un gravato di € 6.213,68 IVA compresa. Il
+                        cliente provvede tempestivamente all'accredito sull'IBAN di Intesa Sanpaolo ed attende le
+                        documentazioni fiscali conferendo l'incarico di scarico ad un trasportatore terzo.
                     </p>
                     <ul>
-                        <li><strong>07 Apr 2026:</strong> Dopo una sbrigativa richiesta listino inviata da Matteo Angiolillo allo shop supermercato, il polo direzionale ribalta il listino Ex-Works con toni pragmatici chiarendo il divieto assoluto a fornire consegne a domicilio e dettando fermi vincoli di prelievo.</li>
-                        <li><strong>07 Apr 2026:</strong> Patacca Burdel ignora la premessa ed ordina in volume 100 vini e decine di Kg di cibi. Prezzo imponibile sbrigativo a € 5.399 più una tassa iva di oltre € 800 per 6.213,68 totali. DDL pre-approva e fornisce coordinate IBAN a Matteo.</li>
-                        <li><strong>08 Apr 2026:</strong> Patacca Burdel attesta il pagamento e comunica che un proprio vettore andrà presto a svuotare le richieste a Piacenza. DDL reclama dati del Trasportatore per procedere ai DDT legali.</li>
+                        <li><strong>07 Apr 2026:</strong> Dopo una sbrigativa richiesta listino inviata da Matteo
+                            Angiolillo allo shop supermercato, il polo direzionale ribalta il listino Ex-Works con toni
+                            pragmatici chiarendo il divieto assoluto a fornire consegne a domicilio e dettando fermi
+                            vincoli di prelievo.</li>
+                        <li><strong>07 Apr 2026:</strong> Patacca Burdel ignora la premessa ed ordina in volume 100 vini
+                            e decine di Kg di cibi. Prezzo imponibile sbrigativo a € 5.399 più una tassa iva di oltre €
+                            800 per 6.213,68 totali. DDL pre-approva e fornisce coordinate IBAN a Matteo.</li>
+                        <li><strong>08 Apr 2026:</strong> Patacca Burdel attesta il pagamento e comunica che un proprio
+                            vettore andrà presto a svuotare le richieste a Piacenza. DDL reclama dati del Trasportatore
+                            per procedere ai DDT legali. In serata, DDL spedisce Fattura e DDT.</li>
                     </ul>
                     <div class="doc-gallery">
                         <h5>📎 Documenti Allegati</h5>
                         <div class="doc-gallery-items">
                             <div class="doc-item">
-                                <a href="assets/docs/Vendita DDL Supermercati - Fattura Immediata.pdf" target="_blank">
+                                <a href="assets/docs/FatturaPataccaBurdel.pdf" target="_blank">
                                     <div class="doc-item-pdf">📄</div>
                                 </a>
                                 <span>Fattura di Vendita</span>
                             </div>
                             <div class="doc-item">
-                                <a href="assets/docs/Vendita DDL Supermercati - Documenti - DDT.pdf" target="_blank">
+                                <a href="assets/docs/DDTPataccaBurdel.pdf" target="_blank">
                                     <div class="doc-item-pdf">📋</div>
                                 </a>
                                 <span>DDT di Consegna</span>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="sc-node node-customer" data-cat="customer" onclick="toggleEmail(this)">
+                <div class="node-header">
+                    <span class="category-tag tag-customer">Cliente B2B</span>
+                    <small>Bertinoro (FC)</small>
+                </div>
+                <h3>Ristorante Patacca Burdel (Nuovo Ordine)</h3>
+                <p>Ordine di 50 bottiglie di Passata di Pomodoro.</p>
+                <div class="email-content narrative-log">
+                    <h4>Cronistoria Rapporti Commerciali (B2B):</h4>
+                    <p class="narrative-description">
+                        L'8 aprile 2026, il signor Matteo Angiolillo invia un nuovo ordine via email dal Ristorante
+                        Patacca Burdel per 50 bottiglie di Passata di Pomodoro. Successivamente
+                        conferma il pagamento relativo al saldo dell'ordine e il 9 aprile DDL ringrazia formalmente
+                        il signor Angiolillo per essere passato di persona in azienda a firmare la documentazione,
+                        allegando i file di Fattura e DDT per il nuovo carico.
+                    </p>
+                    <ul>
+                        <li><strong>08 Apr 2026:</strong> Matteo Angiolillo invia un nuovo ordine specificando la
+                            volontà di acquistare 50 bottiglie di Passata di Pomodoro e inoltra conferma di
+                            bonifico via Intesa Sanpaolo.</li>
+                        <li><strong>09 Apr 2026:</strong> Il commerciale Mattia Cincotta di DDL invia la copia in PDF di
+                            Fattura ed il DDT alla contabilità del cliente per chiudere il nuovo contratto.</li>
+                    </ul>
+
+                    <div class="doc-gallery">
+                        <h5>📎 Documenti Allegati</h5>
+                        <div class="doc-gallery-items">
+                            <div class="doc-item">
+                                <a href="assets/docs/SecondaFatturaPataccaBurdel.pdf" target="_blank">
+                                    <div class="doc-item-pdf">📄</div>
+                                </a>
+                                <span>Fattura di Vendita</span>
+                            </div>
+                            <div class="doc-item">
+                                <a href="assets/docs/SecondoDDTPataccaBurdel.pdf" target="_blank">
+                                    <div class="doc-item-pdf">📋</div>
+                                </a>
+                                <span>DDT di Consegna</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -511,12 +703,21 @@
                 <div class="email-content narrative-log">
                     <h4>Dettagli Imprevisto/Security Log:</h4>
                     <p class="narrative-description">
-                        Fuori dalle consuete logiche commerciali, il 7 aprile 2026 (ore 16:22) i filtri posta di DDL intercettano un'anomalia "security" inviata dal mittente anomalo "tantgriglia@gmail.com". Sotto l'oggetto di posta "l'avete voluto voi", il mittente dirama minacce sovversive citando testualmente "Preparatevi a ricevere una bomba nel vostro supermercato... :3" con tanto di allegato grafico incorporato. Il messaggio viene contestualizzato all'interno delle prassi di validazione minaccia per le security operations della logistica.
+                        Fuori dalle consuete logiche commerciali, il 7 aprile 2026 (ore 16:22) i filtri posta di DDL
+                        intercettano un'anomalia "security" inviata dal mittente anomalo "tantgriglia@gmail.com". Sotto
+                        l'oggetto di posta "l'avete voluto voi", il mittente dirama minacce sovversive citando
+                        testualmente "Preparatevi a ricevere una bomba nel vostro supermercato... :3" con tanto di
+                        allegato grafico incorporato. Il messaggio viene contestualizzato all'interno delle prassi di
+                        validazione minaccia per le security operations della logistica.
                     </p>
                     <ul>
-                        <li><strong>07 Apr 2026 (16:22):</strong> Registrata un'email classificata come potenziale minaccia terroristica da "tantgriglia@gmail.com".</li>
-                        <li><strong>Contenuto Ostile:</strong> Messaggio conciso ("Preparatevi a ricevere una bomba nel vostro supermercato... :3") incrociato con un allegato mediatico PNG.</li>
-                        <li><strong>Stato Gestione:</strong> Valutazione minaccia in perimetro di simulazione di sicurezza logistica, attivate verifiche standard sulle spedizioni in ingresso alle banchine in attesa di ulteriori riscontri.</li>
+                        <li><strong>07 Apr 2026 (16:22):</strong> Registrata un'email classificata come potenziale
+                            minaccia terroristica da "tantgriglia@gmail.com".</li>
+                        <li><strong>Contenuto Ostile:</strong> Messaggio conciso ("Preparatevi a ricevere una bomba nel
+                            vostro supermercato... :3") incrociato con un allegato mediatico PNG.</li>
+                        <li><strong>Stato Gestione:</strong> Valutazione minaccia in perimetro di simulazione di
+                            sicurezza logistica, attivate verifiche standard sulle spedizioni in ingresso alle banchine
+                            in attesa di ulteriori riscontri.</li>
                     </ul>
                 </div>
             </div>
@@ -531,9 +732,9 @@
 
     <script>
         // Ferma propagazione sui link documenti (evita che chiudano la card)
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.doc-gallery a').forEach(function(link) {
-                link.addEventListener('click', function(e) {
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.doc-gallery a').forEach(function (link) {
+                link.addEventListener('click', function (e) {
                     e.stopPropagation();
                 });
             });
@@ -573,4 +774,5 @@
     </script>
 
 </body>
+
 </html>
